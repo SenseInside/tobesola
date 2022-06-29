@@ -1,0 +1,25 @@
+ErrorDocument 403 /page13551230.html
+ErrorDocument 404 /page13551230.html
+
+DirectoryIndex page12256376.html
+
+RewriteEngine On
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
+RewriteRule ^(.*)$ https://tobesola\.com/$1 [R=301,L]
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =https
+RewriteCond %{HTTP_HOST} ^www\.tobesola.com [NC]
+RewriteRule ^(.*)$ https://tobesola\.com/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} /robots.txt
+RewriteCond "%{DOCUMENT_ROOT}/robots_%{HTTP_HOST}.txt" -f
+RewriteRule ^(.*)$ robots_%{HTTP_HOST}.txt [NC,L]
+RewriteRule ^ua$ page12256376.html [NC]
+RewriteRule ^ua/$ page12256376.html [NC]
+
+RewriteRule ^en$ page12551176.html [NC]
+RewriteRule ^en/$ page12551176.html [NC]
+
+RewriteRule ^favicon.ico$ https://static.tildacdn.com/tild3036-3930-4638-b362-363232616637/Frame-1_1.ico [R=302,L]
+
